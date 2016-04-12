@@ -7,8 +7,8 @@ RSpec.describe Kitten do
 
   describe '#age' do
     it 'returns zero for born yesterday' do
-      k = Kitten.create!(name: 'steven', date_of_birth: Date.yesterday)
-      expect(k.age).to eq(1)
+      k = FactoryGirl.create(:kitten, date_of_birth: Date.yesterday)
+      expect(k.age).to eq(0)
     end
   end
 end
