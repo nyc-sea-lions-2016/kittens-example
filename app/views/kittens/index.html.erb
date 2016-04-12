@@ -1,6 +1,7 @@
 <%= render @kittens %>
 
 <hr>
+
 <% @kittens.each do |kitten| %>
   <%= render partial: 'kitten', locals:{kitten: kitten} %>
 <% end %>
