@@ -5,4 +5,10 @@ FactoryGirl.define do
      temperament { Faker::Lorem.word }
      date_of_birth { Faker::Date.between(5.years.ago, 1.years.ago )}
    end
+
+   factory :user do
+    email { Faker::Internet.email }
+    username { Faker::Internet.user_name }
+    password "password"
+   end
 end
