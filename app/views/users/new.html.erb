@@ -1,1 +1,28 @@
-Hello I am new
+
+<%= form_for @user, html:{ class:'abc' } do |f| %>
+<fieldset>
+<legend>User details</legend>
+
+  <% [:email, :username].each do |field|  %>
+
+    <div>
+      <%= f.label field %>
+      <%= f.text_field field %>
+      <% if @user.errors.has_key?(field)  %>
+        <%=  @user.errors[field].join(' ') %>
+      <% end %>
+    </div>
+
+  <% end %>
+
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+
+  <div>
+    <%= f.submit 'Register' %>
+  </div>
+</fieldset>
+<% end %>
+
